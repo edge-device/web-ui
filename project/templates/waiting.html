@@ -2,9 +2,16 @@
 
 {% block title %}Waiting Room{% endblock %}
 
+{% block breadcrumbs %}
+<li class="breadcrumb-item"><a href="/">Home</a></li>
+<li class="breadcrumb-item active" aria-current="page">Waiting Room</li>
+{% endblock %}
+
 {% block content %}
 <div class="row">
     <div class="col-lg-12">
+        <h2>Waiting Room</h2>
+        <p>Devices that are waiting while looking for a profile to be assigned.</p>
         <table class="table table-hover">
             <thead>
               <tr>
