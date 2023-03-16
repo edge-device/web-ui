@@ -1,16 +1,92 @@
-{% extends "base.html" %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Polaris</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
 
-{% block title %}Home{% endblock %}
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            }
+        .SectionTitle {
+            color: #0068b5;
+            }
+    </style>
+  </head>
+  <body>
 
-{% block breadcrumbs %}
-<li class="breadcrumb-item active" aria-current="page">Home</li>
-{% endblock %}
-
-{% block content %}
-<div class="row">
-    <div class="col-lg-12">
-        <h1>Home</h1>
-        <p>This is the Home page of your website.</p>
+<main class="container">
+    <nav class="navbar navbar-light bg-light p-3">
+        <div class="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
+            <a class="navbar-brand" href="/">
+                <img src="/img/polaris_logo_bl.svg" alt="" height="50">
+            </a>
+        </div>
+        <div class="col-12 col-md-5 col-lg-8 d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
+            <div class="row flex-nowrap justify-content-end align-items-center">
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                  <a class="btn btn-sm btn-outline-secondary" href="/signup">Sign up</a>
+                  &nbsp;&nbsp;
+                  <a class="btn btn-sm btn-outline-secondary" href="/signin">Sign in</a>
+                </div>
+              </div>
+        </div>
+    </nav>
+  <div class="bg-image p-4 p-md-5 mb-4 text-white rounded bg-dark"
+    style="background-image: url('/img/space2.jpg');">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 fst-italic">Enabling zero-touch, bare-metal provisioning</h1>
+      <p class="lead my-3">Polaris is a "North Star" provisioning service that provides a flexible and scalable service for taking one, or thousands, of bare-metal systems and preparing them for deployment</p>
+      <p class="lead mb-0"><a href="/signup" class="text-white fw-bold">Sign up now!</a></p>
     </div>
-</div>
-{% endblock %}
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="SectionTitle d-inline-block mb-2">Secure</strong>
+          <h3 class="mb-0">Security first</h3>
+          <p class="card-text mb-auto">Polaris leverages the <a href="https://fidoalliance.org/iot-specifications-overview-2/">FIDO Device Onboarding</a> protocol for establishing trust and ownership of the device prior to provisioning.
+        </div>
+        <div class="col-auto d-none d-lg-block">
+            <img src="/img/lock.jpg" width="200" height="300">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="SectionTitle d-inline-block mb-2">Flexible</strong>
+          <h3 class="mb-0">Deployment</h3>
+          <p class="mb-auto">Polaris supports imaging the device with the provisioning OS in the factory, allows scalable deployments using PXE, or enabled zero-touch deployments using HTTP Boot.</p>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+            <img src="/img/factory.jpg" width="200" height="300">
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="pt-5 d-flex justify-content-between">
+    <span>Copyright © 2023 edgedevices.io</span>
+    <ul class="nav m-0">
+      <li class="nav-item">
+        <a class="nav-link text-secondary" aria-current="page" href="#">Privacy Policy</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-secondary" href="#">Terms and conditions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-secondary" href="#">Contact</a>
+      </li>
+    </ul>
+</footer>
+  </body>
+</html>
