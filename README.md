@@ -1,28 +1,43 @@
-==================
-complexity-example
-==================
+# Polaris Web-UI
 
-An example of a Complexity site. 
+Polaris Web-UI is the user interface for the Polaris service. It run as a static website in an Nginx container and interacts with Polaris service using its APIs--an architectural pattern sometimes referred to as a Jamstack.
 
-Clone this and use it with the Complexity static site generator: https://github.com/audreyr/complexity
+## Website Develop
 
-Try it out::
+In order to reduce code duplication and sped development, Web-UI is built using a lightweight static site generator (SSG), called [Complexity](https://github.com/audreyr/complexity) . While Complexity is unmaintained, for a simple SSG it works really well. There is a project underway to create a modern Go version, but that is currently a WIP. I have tested omplexity with Python 3.8 and it works fine.
 
-    $ pip3 install complexity
-    $ git clone git@github.com:audreyr/complexity-example.git my_proj
-    $ cd my_proj
-    $ complexity --noserver project/
+### Complexity installation
 
-    # Add Complexity path to PATH in .bashrc 
-    $ echo "export PATH='/home/$(USER)/.local/bin:$PATH'" >> ~/.bashrc
+Use the following pip command to install Complexity SSG
 
-python3 -m http.server --directory www/ 8080
+`>$ pip3 install complexity`
 
-Once you've done that, open a web browser to http://127.0.0.1:9090 to see the
-newly generated Complexity static site.
+Add Complexity path to PATH in your local .bashrc using the following command:
+
+`>$ echo "export PATH='/home/$(USER)/.local/bin:$PATH'" >> ~/.bashrc`
+
+### Build and run the website
+
+Complexity documentation can be found [here](https://complexity.readthedocs.io/en/latest/). In order to make things easier, make commands for build and serve have been created. To build the static site, run the following command from the project root directory:
+
+`>$ make build`
+
+To build and serve the website, run the command:
+
+`>$ make run`
+
+<strong>Note: The default port is 8080, which can be changed in the Makefile.</strong>
+
+### Project Layout
+
+Below is the project directory layout. Website development is done in the `/project` directory. When the site is built, the build is placed in `/www` directory. This is the folder that gets served by the Nginx web server.
 
 ```
-my_repo/
+web-ui/
+├── data
+│   ├── certbot
+│   └── nginx
+│
 ├── project/       <--------- input
 │   ├── assets/
 │   │   ├── css/
@@ -34,26 +49,23 @@ my_repo/
 │       ├── index.html
 │       └── about.html
 │
-└── www/          <---------- output
-    ├── index.html
-    ├── about/
-    │   └── index.html
-    ├── css/
-    ├── js/
-    └── img/
+├── www/          <---------- output
+│   ├── index.html
+│   ├── about/
+│   │   └── index.html
+│   ├── css/
+│   ├── js/
+│   └── img/
 ```
 
+### Deploying
 
-```
-usage: complexity [-h] [--port PORT] [--noserver] project_dir
+This documentation assumes you have a server with Docker and Docker Compose installed. For a new deployment, the `init.sh` must be run first to setup dummy certs and prepare for certbot to obtain a signed Let's Encrypt certificate, then the Compose file can be deployed.
 
-A refreshingly simple static site generator, for thosewho like to work in HTML.
+Deploy website using Docker Compose
 
-positional arguments:
-  project_dir  Your project directory containing the files to be processed byComplexity.
+`>$ sudo docker-compose up`
 
-options:
-  -h, --help   show this help message and exit
-  --port PORT  Port number to serve files on.
-  --noserver   Don't run the server.
-  ```
+### Shell into Nginx container
+
+`>$ docker exec -it web-ui_nginx_1 /bin/sh`

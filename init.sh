@@ -1,6 +1,6 @@
 #!/bin/bash
 
-domains=(polaris.westus3.cloudapp.azure.com)
+domains=polaris.westus3.cloudapp.azure.com
 rsa_key_size=4096
 data_path="./data/certbot"
 email="kedge.management@gmail.com"
@@ -23,7 +23,6 @@ docker-compose run --rm --entrypoint "\
     -out '$path/fullchain.pem' \
     -subj '/CN=localhost'" certbot
 echo
-
 
 echo "### Starting nginx ..."
 docker-compose up --force-recreate -d nginx
