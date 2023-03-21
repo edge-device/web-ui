@@ -8,10 +8,13 @@ Clone this and use it with the Complexity static site generator: https://github.
 
 Try it out::
 
-    $ pip install complexity
+    $ pip3 install complexity
     $ git clone git@github.com:audreyr/complexity-example.git my_proj
     $ cd my_proj
     $ complexity --noserver project/
+
+    # Add Complexity path to PATH in .bashrc 
+    $ echo "export PATH='/home/$(USER)/.local/bin:$PATH'" >> ~/.bashrc
 
 python3 -m http.server --directory www/ 8080
 
