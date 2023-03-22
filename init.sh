@@ -2,7 +2,7 @@
 
 domains=polaris.westus3.cloudapp.azure.com
 rsa_key_size=4096
-data_path="./data/certbot"
+data_path="./config/certbot"
 email="kedge.management@gmail.com"
 staging=0 # Set to 1 for testing
 
