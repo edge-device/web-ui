@@ -1,0 +1,14 @@
+# This config is for local port 80 only
+server {
+    listen 80;
+    server_name localhost;
+    server_tokens off;
+
+    location /v1/device {
+        proxy_pass http://192.168.1.12:8000;
+    }
+
+    location / {
+        root /var/www/polaris;
+    }
+}
