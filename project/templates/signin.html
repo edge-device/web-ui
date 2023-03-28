@@ -4,8 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="is-login-page" content="yes">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jwt-decode.js"></script>
     <title>Polaris Sign-up</title>
-
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
         integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
@@ -56,21 +59,16 @@
             background-color: #0068b5;
         }
     </style>
-
-    <!-- Custom styles for this template -->
 </head>
 
 <body class="text-center">
-
     <main class="form-signin">
-        <form action="/waiting/">
-            <img class="mb-4" src="/img/polaris_logo_bl.svg" alt="" height="50">
-            <h1 class="h3 mb-3 fw-normal">Please sign in</h1><br><br>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in with GitHub <i
-                    class="bi-github"></i></button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2023 edgedevices.io</p>
-        </form>
+        <img class="mb-4" src="/img/polaris_logo_bl.svg" alt="" height="50">
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1><br><br>
+        <button  id="GithubLogin" class="w-100 btn btn-lg btn-primary" type="submit">Sign in with GitHub <i class="bi-github"></i></button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2023 edgedevices.io</p>
     </main>
 </body>
-
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/polaris-auth.js"></script>
 </html>

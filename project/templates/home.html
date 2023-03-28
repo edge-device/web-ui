@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block breadcrumbs %}
+<li class="breadcrumb-item active" aria-current="page">Home</li>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <h2>Home</h2>
+        <p>Devices that are waiting while looking for a profile to be assigned.</p>
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Device ID</th>
+                <th scope="col">Last Seen</th>
+                <th scope="col">Actions</th>
+                <th scope="col">Region</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">target454-001</th>
+                <td>Wed Mar 15 09:48:29 MST 2023</td>
+                <td><i class="feather feather-users">dsfadsf</i></td>
+                <td>Atlanta</td>
+              </tr>
+              <tr>
+                <th scope="row">target454-002</th>
+                <td>Wed Mar 15 09:48:29 MST 2023</td>
+                <td><i class="bi-github">dsfadsf</i></td>
+                <td>Atlanta</td>
+              </tr>
+              <tr>
+                <th scope="row">target454-003</th>
+                <td>Wed Mar 15 09:48:29 MST 2023</td>
+                <td></td>
+                <td>Atlanta</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+{% endblock %}
